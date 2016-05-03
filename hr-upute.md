@@ -34,7 +34,7 @@ Ovisno o elektrodama koje imate, boje i oznake mogu se razlikovati, pa se poslu�
 koraka pravilno postaviti elektrode:
 
 0. Ako su rezultati očekivani, super!
-1. Ako je signal invertiran (okrenut naopako), zamijenite elektrode lijeve i desne ruke i -> 0.
-2. Ako je signal neočekivanog oblika, zamijenite mjesta elektrode na lijevoj nozi i bilo koje od elektroda na rukama i -> 1.
+1. Ako je signal invertiran (okrenut naopako), zamijenite elektrode lijeve i desne ruke i -> 1.
+2. Ako je signal neočekivanog oblika, zamijenite mjesta elektrode na lijevoj nozi i bilo koje od elektroda na rukama i -> 2.
 
 Detaljnije informacije o radu uređaja možete pronaći u komentarima u kodu
