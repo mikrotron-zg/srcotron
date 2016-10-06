@@ -26,7 +26,31 @@
 //Current only USB, power and headers
 //translate([0,0,8])arduino();
 //enclosure();
-rotate([0,180,0]) translate([-55,0,-3]) enclosureLid();
+//rotate([0,180,0]) translate([-55,0,-3]) enclosureLid();
+heart(45,50,5);
+
+module heart(h,w,d){
+    r=w/4;
+    tau=h-r;
+    up=2*tau*pow(r,2);
+    dwn=pow(tau,2)+pow(r,2);
+    tangx=up/dwn;
+    tangy=sqrt(pow(r,2)-pow(tangx,2));
+    p1d=[r-tangy,h-r-tangx,0];
+    p1u=[r-tangy,h-r-tangx,d];
+    p2d=[3*r+tangy,h-r-tangx,0];
+    p2u=[3*r+tangy,h-r-tangx,d];
+    p3d=[2*r,0,0];
+    p3u=[2*r,0,d];
+    union(){
+        translate([r,h-r,0])cylinder(d,r,r,false,$fn=32);
+        translate([3*r,h-r,0])cylinder(d,r,r,false,$fn=32);
+        translate([r,h-2*r,0])cube([2*r,r,d],false);
+        pts=[p1d,p2d,p3d,p1u,p2u,p3u];
+        fcs=[[5,2,1],[4,5,1],[5,4,3],[4,1,0],[3,4,0],[5,3,0],[2,5,0]];
+        polyhedron(pts,fcs);
+    }
+}
 
 module arduino(boardType = UNO) {
 	//The PCB with holes

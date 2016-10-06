@@ -74,7 +74,7 @@ pygame.display.flip()
 # serial init
 s=serial.Serial()
 s.baudrate=57600
-s.port="COM3"
+s.port="COM12"
 s.open()
 
 # podaci (trenutno se ne koriste u programu)
